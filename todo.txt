@@ -1,0 +1,22 @@
+ODRADJENO
+
+- //sa home page napraviti link dugme koje ce da vodi na "todo-list" rutu
+- //dodati u formu checkbox kada se pravi novi todo da moze done property da bude true ili false
+- //navigacija treba da se prikazuje i na root i na todo list
+- //kada smo na todo-list ruti prikazati dugme da se vrati na homepage
+
+
+NIJE ODRADJENO
+- dodati projekat na github 
+- svaku liniju zadatka kada odradis kompitujes pa tek onda prelazis na drugi zadatak
+
+1. za svaku todo komponentu dodati bg-success ili bg-danger u zavisnoti da li je done property false ili true
+2. TODO napraviti metodu resetFields koja ce kada se pozove da vrati inpute default vrednosti
+3. TODO Obrisati element iz niza na neki drugi nacin
+4. navigacija klik na logo redirekotvati na homepage
+5. navigacija dodati link koji vodi na todo-page
+6. navigacija postaviti navigaciju na top level aplikacije tako da bude prikazana na svim stranicama
+7. stilizovati malo aplikaciju da bude preglednija
+8. VALIDACIJA polja (ako su input polja todo title i todo descriptin prazni korisnik ne moze da doda novi todo, treba dodati disable atribut na button)
+Mozes i na primer da ostavis dugme ADD TODO da uvek bude dostupno ali da prikazes gresku ako je neko od polja prazno i naravnjo ne dodati nista u array
+ oba input polja su required
