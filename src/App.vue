@@ -1,16 +1,24 @@
 <template>
   <div id="app">
-    <div>NAVIGACIJA</div>
-    <router-view/>
+    
+  <Nav></Nav>
+  <router-view/>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
+import HelloWorld from '@/components/HelloWorld'
+import Nav from '@/components/Nav'
+import main from '@/main.js'
+import index from '@/router/index.js'
 
 export default {
   name: 'App', 
+  components: {
+    "Nav":Nav,
+  }
  
 }
 </script>

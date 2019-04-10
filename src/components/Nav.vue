@@ -34,8 +34,5 @@ data() {
 }
 </script>
 <style>
-.nav {
-  margin-right: 50px;/*hej*/
-}
 
 </style>

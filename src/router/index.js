@@ -18,10 +18,6 @@ export default new Router({
       name: 'TodoPage',
       component: TodoPage
     },
-    {
-      path: '/',
-      name: 'Nav',
-      component: Nav
-    },
+    
   ]
 })
