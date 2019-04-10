@@ -1,10 +1,10 @@
 <template>
   <div>
-      <!--<h1>To Do App</h1>
+      <h1>To Do App</h1>
       <button v-on:click="clickButton" class="btn btn-primary">CLICK ME</button>
       <button v-on:click="clickButtonTwo" class="btn btn-primary">CLICK MEEEEEEEE</button>
       <button><router-link to="/todo-list">Go to my App</router-link></button>
-     </div> -->
+     </div> 
 </template>
 
 <script>
