@@ -7,8 +7,8 @@ ODRADJENO
 
 
 NIJE ODRADJENO
-- dodati projekat na github 
-- svaku liniju zadatka kada odradis kompitujes pa tek onda prelazis na drugi zadatak
+- //dodati projekat na github 
+- //svaku liniju zadatka kada odradis kompitujes pa tek onda prelazis na drugi zadatak
 
 1. za svaku todo komponentu dodati bg-success ili bg-danger u zavisnoti da li je done property false ili true
 2. TODO napraviti metodu resetFields koja ce kada se pozove da vrati inpute default vrednosti
