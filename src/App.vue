@@ -10,6 +10,7 @@
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 import HelloWorld from '@/components/HelloWorld'
+import TodoPage from '@/components/TodoPage'
 import Nav from '@/components/Nav'
 import main from '@/main.js'
 import index from '@/router/index.js'
@@ -18,6 +19,7 @@ export default {
   name: 'App', 
   components: {
     "Nav":Nav,
+    TodoPage,
   }
  
 }

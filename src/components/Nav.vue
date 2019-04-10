@@ -1,7 +1,8 @@
 <template>
    <div>
  <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
-  <a class="navbar-brand" href="#">My To Do App</a>
+  <a class="navbar-brand" href="/HelloWorld">{{ header }}</a>
+  <router-link to="/todo-list">Go to my todo list</router-link>
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -22,6 +23,7 @@
 <script>
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
+import TodoPage from '@/components/TodoPage'
 
 
 export default {

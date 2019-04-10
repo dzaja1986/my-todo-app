@@ -19,5 +19,6 @@ export default new Router({
       component: TodoPage
     },
     
-  ]
+  ],
+  mode:"history"
 })
