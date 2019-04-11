@@ -32,6 +32,7 @@
           <button v-show="editTodoForm" v-on:click="saveTodo" type="submit" class="btn btn-success">Save Todo</button>
           <input type="checkbox" id="checkbox" v-model="done">
           <label for="checkbox">{{ done ? 'DONE' : 'UNDONE'}}</label>
+          
         </form>
       </div>
     </div>
