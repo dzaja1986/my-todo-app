@@ -1,11 +1,11 @@
 <template>
   <div class="col-sm-6">
     <div class="card mb-3">
-      <div class="card-body" v-bind:class="{red: todo.done, green: !todo.done}">
+      <div class="card-body" v-bind:class="{ ['bg-danger']: !todo.done, ['bg-success']: todo.done}">
         <h5 class="card-title">{{ todo.title }}</h5>
         <p class="card-text">{{ todo.description }}</p>
         <!--<p>{{ todo.done ? 'DONE' : 'UNDONE' }}</p>-->
-        <span v-on:click="deleteTodo(todo.id)" class="card-link">Remove</span>
+        <span  v-on:click="deleteTodo(todo.id)" class="card-link">Remove</span>
         <span v-on:click="editTodo(todo)" class="card-link">Edit</span>
       </div>
     </div>
@@ -31,10 +31,10 @@ export default {
 </script>
 <style>
 .red {
-    background: red;
+    background: rgb(250, 64, 64);
 }
 .green {
-    background: green;
+    background: rgb(82, 216, 82);
 }
 
 </style>
