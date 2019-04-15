@@ -123,15 +123,16 @@ export default {
       this.done = todo.done;
       this.editTodoId = todo.id
     },
-    deleteTodo(id) {
+    /*deleteTodo(id) {
       this.todos = this.todos.filter(todo => todo.id !== id);
 
       this.setTodosToLocalStorage(this.todos);
       // TODO Obrisati element iz niza na neki drugi nacin
-    },
-    /*deleteTodo: function(id) {
-                this.todos.splice(this.todos.indexOf(id), 1);
-        },*/
+    },*/
+    deleteTodo(id) {
+           this.todos.splice(this.id, 1);
+        },
+     
 
     createTodo(event) {
       event.preventDefault();
