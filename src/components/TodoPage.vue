@@ -30,6 +30,7 @@
           </div>
           <button v-bind:disabled="isButtonDisabled()" v-show="!editTodoForm" v-on:click="createTodo" type="submit" class="btn btn-primary">Add Todo</button>
           <button v-bind:disabled="isButtonDisabled()" v-show="editTodoForm" v-on:click="saveTodo" type="submit" class="btn btn-success">Save Todo</button>
+          <input type="button" class="button is-warning" @click="resetForm()" value="Reset Form">
           <button v-on:click="exitEditMode" v-show="editTodoForm" class="btn btn-warning">Exit Edit MOde</button>
           <input type="checkbox" id="checkbox" v-model="done">
           <label for="checkbox">{{ done ? 'DONE' : 'UNDONE'}}</label>
@@ -86,6 +87,13 @@ export default {
       this.descriptionText = "";
       this.done = false;
     },
+    resetForm() {
+      console.log("Reset");
+      /*Object.assign(this.$data, this.$options.data());*/
+      this.titleText = "";
+      this.descriptionText = "";
+    },
+
     setTodosToLocalStorage(todos) {
       window.localStorage.setItem('todos', JSON.stringify(todos))
     },
@@ -123,17 +131,16 @@ export default {
       this.done = todo.done;
       this.editTodoId = todo.id
     },
-    /*deleteTodo(id) {
+    deleteTodo(id) {
       this.todos = this.todos.filter(todo => todo.id !== id);
 
       this.setTodosToLocalStorage(this.todos);
       // TODO Obrisati element iz niza na neki drugi nacin
-    },*/
-    deleteTodo(id) {
+    },
+    /*deleteTodo(id) {
            this.todos.splice(this.id, 1);
-        },
+        },*/
      
-
     createTodo(event) {
       event.preventDefault();
       
