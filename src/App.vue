@@ -14,12 +14,13 @@ import TodoPage from '@/components/TodoPage'
 import Nav from '@/components/Nav'
 import main from '@/main.js'
 import index from '@/router/index.js'
+import SignIn from '@/components/SignIn'
 
 export default {
   name: 'App', 
   components: {
     "Nav":Nav,
-    TodoPage,
+    TodoPage
   }
  
 }
