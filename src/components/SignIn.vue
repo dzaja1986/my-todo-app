@@ -1,23 +1,94 @@
 <template>
-  <!-- Default form register -->
-  <form class= "col-sm-12 col-md-6 offset-md-3 mt-4">
-    <p class="h4 text-center mb-4">Sign up</p>
-    <label for="defaultFormRegisterNameEx" class="grey-text">Your name</label>
-    <input type="text" id="defaultFormRegisterNameEx" class="form-control"/>
-    <br/>
-    <label for="defaultFormRegisterEmailEx" class="grey-text">Your email</label>
-    <input type="email" id="defaultFormRegisterEmailEx" class="form-control"/>
-    <br/>
-    <label for="defaultFormRegisterConfirmEx" class="grey-text">Your password</label>
-    <input type="email" id="defaultFormRegisterConfirmEx" class="form-control"/>
-    <br/>
-    <label for="defaultFormRegisterPasswordEx" class="grey-text">Confirm your password</label>
-    <input type="password" id="defaultFormRegisterPasswordEx" class="form-control"/>
-    <div class="text-center mt-4">
-      <button class="btn btn-primary" type="submit">Register</button>
-    </div>
-  </form>
-  <!-- Default form register -->
+  <div class="container mt-5">
+    <form class="form-horizontal">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h2>Register New User</h2>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="name">Name</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                        <input type="text" name="name" class="form-control" id="name"
+                               placeholder="Milan Miloradovic" required autofocus>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback">
+                        <span class="text-danger align-middle">
+                            <!-- Put name validation error messages here -->
+                        </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="email">E-Mail Address</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                        <input type="text" name="email" class="form-control" id="email"
+                               placeholder="you@example.com" required autofocus>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback">
+                        <span class="text-danger align-middle">
+                            <!-- Put e-mail validation error messages here -->
+                        </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="password">Password</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group has-danger">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                        <input type="password" name="password" class="form-control" id="password"
+                               placeholder="Password" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="password">Confirm Password</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem">
+                            <i class="fa fa-repeat"></i>
+                        </div>
+                        <input type="password" name="password-confirmation" class="form-control"
+                               id="password-confirm" placeholder="Password" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <button v-on:click="saveRegister" type="submit" class="btn btn-success"><i class="fa fa-user-plus"></i> Register</button>
+            </div>
+        </div>
+    </form>
+</div>
+
 </template>
 <script>
 import Vue from 'vue'
@@ -27,9 +98,19 @@ import BootstrapVue from 'bootstrap-vue'
 
 export default {
      name: 'SignIn',
+     methods: {
+         saveRegister() {
+    
+         }
+     }
 
 }
 </script>
-<style>
-
+<style scope>
+@media(min-width: 768px) {
+  .field-label-responsive {
+    padding-top: .5rem;
+    text-align: right;
+  }
+}
 </style>
