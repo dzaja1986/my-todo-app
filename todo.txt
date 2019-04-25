@@ -10,13 +10,13 @@ ODRADJENO
 -//navigacija klik na logo redirekotvati na homepage
 - //navigacija dodati link koji vodi na todo-page
 - //navigacija postaviti navigaciju na top level aplikacije tako da bude prikazana na svim stranicama
+-// TODO napraviti metodu resetFields koja ce kada se pozove da vrati inpute default vrednosti
+-//TODO Obrisati element iz niza na neki drugi nacin
 
 NIJE ODRADJENO
 
-2.// TODO napraviti metodu resetFields koja ce kada se pozove da vrati inpute default vrednosti
-3. //TODO Obrisati element iz niza na neki drugi nacin
 7. stilizovati malo aplikaciju da bude preglednija
-8. VALIDACIJA polja (ako su input polja todo title i todo descriptin prazni korisnik ne moze da doda novi todo, treba dodati disable atribut na button)
+8. //VALIDACIJA polja (ako su input polja todo title i todo descriptin prazni korisnik ne moze da doda novi todo, treba dodati disable atribut na button)
 Mozes i na primer da ostavis dugme ADD TODO da uvek bude dostupno ali da prikazes gresku ako je neko od polja prazno i naravnjo ne dodati nista u array
  oba input polja su required
  9. TODO napraviti sign in formu i sign up formu i podatke cuvati u local storage
