@@ -108,7 +108,7 @@
                 name="password-confirmation"
                 class="form-control"
                 id="password1"
-                placeholder="Password"
+                placeholder="Confirm Password"
                 required
               >
             </div>
@@ -146,10 +146,10 @@ export default {
          event.preventDefault();
 
         this.users.push({
-        name : this.users.name = "",
-        email : this.users.email = "",
-        password : this.users.password = "",
-        password1 : this.users.password1 = ""
+        name : this.name,
+        email : this.email,
+        password : this.password,
+        password1 : this.password1
       });
       this.setUsersToLocalStorage(this.users);
 
