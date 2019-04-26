@@ -19,10 +19,10 @@ NIJE ODRADJENO
 8. //VALIDACIJA polja (ako su input polja todo title i todo descriptin prazni korisnik ne moze da doda novi todo, treba dodati disable atribut na button)
 Mozes i na primer da ostavis dugme ADD TODO da uvek bude dostupno ali da prikazes gresku ako je neko od polja prazno i naravnjo ne dodati nista u array
  oba input polja su required
- 9. TODO napraviti sign in formu i sign up formu i podatke cuvati u local storage
- -- smestati usere u 'users' i neka bude array sa objektima, svaki user ce biti objekat sa (email, password, name, lastname, age)
+ 9. //TODO napraviti sign in formu i sign up formu i podatke cuvati u local storage
+ -- //smestati usere u 'users' i neka bude array sa objektima, svaki user ce biti objekat sa (email, password, name, lastname, age)
  10. Sing in form treba da ima i repeat-password polje koje ce da uporedjuje vrednost unetu u password
- 11. Uraditi validaciju za sign in formu koji hoces nacin ili na klik dugmenta da proverava polja ili na kucanje u poljima
+ 11. //Uraditi validaciju za sign in formu koji hoces nacin ili na klik dugmenta da proverava polja ili na kucanje u poljima
  12. Password polje treba da ima najmanje 6 karaktera
  13. Name polje treba da ima najmanje 1 karakter
  14. Na sbumit sacuvatio u 'users' key u local storage
