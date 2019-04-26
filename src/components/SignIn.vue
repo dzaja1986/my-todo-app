@@ -107,7 +107,7 @@
                 type="password"
                 name="password-confirmation"
                 class="form-control"
-                id="password-confirm"
+                id="password1"
                 placeholder="Password"
                 required
               >
@@ -118,7 +118,7 @@
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-          <button v-on:click="saveRegister" type="submit" class="btn btn-success">
+          <button v-on:click="saveRegister" type="submit" class="btn btn-primary">
             <i class="fa fa-user-plus"></i> Submit
           </button>
         </div>
@@ -126,6 +126,7 @@
     </form>
   </div>
 </template>
+
 <script>
 import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
@@ -138,6 +139,9 @@ export default {
     };
   },
   methods: {
+      setUsersToLocalStorage(users) {
+      window.localStorage.setItem("users", JSON.stringify(users));
+    },
     saveRegister(event) {
          event.preventDefault();
 
@@ -147,16 +151,14 @@ export default {
         password : this.users.password = "",
         password1 : this.users.password1 = ""
       });
-      this.setTodosToLocalStorage(this.users);
+      this.setUsersToLocalStorage(this.users);
 
-        (this.users.name = ""),
-        (this.users.email = ""),
-        (this.users.password = ""),
-        (this.users.password1 = "");
+        this.users.name = "",
+        this.users.email = "",
+        this.users.password = "",
+        this.users.password1 = "";
     },
-    setTodosToLocalStorage(users) {
-      window.localStorage.setItem("users", JSON.stringify(users));
-    }
+    
   }
 };
 </script>
