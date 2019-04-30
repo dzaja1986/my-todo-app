@@ -115,19 +115,24 @@ export default {
   validations: {
     user: {
       firstName: { required, minLength: minLength(4) },
-      lastName: {},
+      lastName: { },
       email: { required, email },
       password: { required, minLength: minLength(6) },
       confirmPassword: { required, sameAsPassword: sameAs("password") }
     }
   },
   methods: {
-    setUserToLocalStorage(user) {
-      window.localStorage.setItem("user", JSON.stringify(user));
-    },
 
     handleSubmit(event) {
       event.preventDefault();
+       this.setUserToLocalStorage(this.user);
+
+      this.firstName = "";
+      this.lastName = "";
+      this.email = "";
+      this.password = "";
+      this.confirmPassword = "";
+
       this.submitted = true;
 
       this.$v.$touch();
@@ -136,6 +141,9 @@ export default {
       }
 
       alert("SUCCESS!! :-");
+    },
+     setUserToLocalStorage(user) {
+      window.localStorage.setItem("user", JSON.stringify(user));
     },
   }
 };
