@@ -1,173 +1,142 @@
 <template>
-  <div class="container mt-5">
-    <form class="form-horizontal">
+  <div class="jumbotron">
+    <div class="container">
       <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-          <h2>Register New User</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3 field-label-responsive">
-          <label for="name">Name</label>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-              <div class="input-group-addon" style="width: 2.6rem">
-                <i class="fa fa-user"></i>
+        <div class="col-sm-8 offset-sm-2">
+          <div>
+            <form @submit.prevent="handleSubmit">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input
+                  type="text"
+                  v-model="user.firstName"
+                  id="firstName"
+                  name="firstName"
+                  class="form-control"
+                  :class="{ 'is-invalid': submitted && $v.user.firstName.$error }"
+                >
+                <div
+                  v-if="submitted && !$v.user.firstName.required"
+                  class="invalid-feedback"
+                >First Name is required</div>
+                <span v-if="!$v.user.firstName.minLength">Name must be at least 4 characters</span>
               </div>
-              <input
-                v-model="name"
-                type="text"
-                name="name"
-                class="form-control"
-                id="name"
-                placeholder="Milan Miloradovic"
-                required
-                autofocus
-              >
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="form-control-feedback">
-            <span class="text-danger align-middle">
-              <!-- Put name validation error messages here -->
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3 field-label-responsive">
-          <label for="email">E-Mail Address</label>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-              <div class="input-group-addon" style="width: 2.6rem">
-                <i class="fa fa-at"></i>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input
+                  type="text"
+                  v-model="user.lastName"
+                  id="lastName"
+                  name="lastName"
+                  class="form-control"
+                  :class="{ 'is-invalid': submitted && $v.user.lastName.$error }"
+                >
+                <div
+                  v-if="submitted && !$v.user.lastName.required"
+                  class="invalid-feedback"
+                >Last Name is required</div>
               </div>
-              <input
-                v-model="email"
-                type="text"
-                name="email"
-                class="form-control"
-                id="email"
-                placeholder="you@example.com"
-                required
-                autofocus
-              >
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="form-control-feedback">
-            <span class="text-danger align-middle">
-              <!-- Put e-mail validation error messages here -->
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3 field-label-responsive">
-          <label for="password">Password</label>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group has-danger">
-            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-              <div class="input-group-addon" style="width: 2.6rem">
-                <i class="fa fa-key"></i>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  v-model="user.email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  :class="{ 'is-invalid': submitted && $v.user.email.$error }"
+                >
+                <div v-if="submitted && $v.user.email.$error" class="invalid-feedback">
+                  <span v-if="!$v.user.email.required">Email is required</span>
+                  <span v-if="!$v.user.email.email">Email is invalid</span>
+                </div>
               </div>
-              <input
-                v-model="password"
-                type="password"
-                name="password"
-                class="form-control"
-                id="password"
-                placeholder="Password"
-                required
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3 field-label-responsive">
-          <label for="password">Confirm Password</label>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-              <div class="input-group-addon" style="width: 2.6rem">
-                <i class="fa fa-repeat"></i>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  v-model="user.password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  :class="{ 'is-invalid': submitted && $v.user.password.$error }"
+                >
+                <div v-if="submitted && $v.user.password.$error" class="invalid-feedback">
+                  <span v-if="!$v.user.password.required">Password is required</span>
+                  <span v-if="!$v.user.password.minLength">Password must be at least 6 characters</span>
+                </div>
               </div>
-              <input
-              v-model="password1"
-                type="password"
-                name="password-confirmation"
-                class="form-control"
-                id="password1"
-                placeholder="Confirm Password"
-                required
-              >
-            </div>
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input
+                  type="password"
+                  v-model="user.confirmPassword"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  class="form-control"
+                  :class="{ 'is-invalid': submitted && $v.user.confirmPassword.$error }"
+                >
+                <div v-if="submitted && $v.user.confirmPassword.$error" class="invalid-feedback">
+                  <span v-if="!$v.user.confirmPassword.required">Confirm Password is required</span>
+                  <span v-else-if="!$v.user.confirmPassword.sameAsPassword">Passwords must match</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary">Submit</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-          <button v-on:click="saveRegister" type="submit" class="btn btn-primary">
-            <i class="fa fa-user-plus"></i> Submit
-          </button>
-        </div>
-      </div>
-    </form>
+    </div>
   </div>
 </template>
 
 <script>
+import { required, email, minLength, sameAs } from "vuelidate/lib/validators";
 import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
+
 
 export default {
   name: "SignIn",
   data() {
     return {
-      users: [{ name: "" }, { email: "" }, { password: "" }, { password1: "" }]
+      user: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
+      },
+      submitted: false
     };
   },
+  validations: {
+    user: {
+      firstName: { required, minLength: minLength(4) },
+      lastName: {},
+      email: { required, email },
+      password: { required, minLength: minLength(6) },
+      confirmPassword: { required, sameAsPassword: sameAs("password") }
+    }
+  },
   methods: {
-      setUsersToLocalStorage(users) {
-      window.localStorage.setItem("users", JSON.stringify(users));
+    setUserToLocalStorage(user) {
+      window.localStorage.setItem("user", JSON.stringify(user));
     },
-    saveRegister(event) {
-         event.preventDefault();
 
-        this.users.push({
-        name : this.name,
-        email : this.email,
-        password : this.password,
-        password1 : this.password1
-      });
-      this.setUsersToLocalStorage(this.users);
+    handleSubmit(event) {
+      event.preventDefault();
+      this.submitted = true;
 
-        this.users.name = "",
-        this.users.email = "",
-        this.users.password = "",
-        this.users.password1 = "";
+      this.$v.$touch();
+      if (this.$v.$invalid) {
+        return;
+      }
+
+      alert("SUCCESS!! :-");
     },
-    
   }
 };
 </script>
-
-<style scope>
-@media (min-width: 768px) {
-  .field-label-responsive {
-    padding-top: 0.5rem;
-    text-align: right;
-  }
-}
-</style>

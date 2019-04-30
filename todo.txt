@@ -21,12 +21,12 @@ Mozes i na primer da ostavis dugme ADD TODO da uvek bude dostupno ali da prikaze
  oba input polja su required
  9. //TODO napraviti sign in formu i sign up formu i podatke cuvati u local storage
  -- //smestati usere u 'users' i neka bude array sa objektima, svaki user ce biti objekat sa (email, password, name, lastname, age)
- 10. Sing in form treba da ima i repeat-password polje koje ce da uporedjuje vrednost unetu u password
+ 10. //Sing in form treba da ima i repeat-password polje koje ce da uporedjuje vrednost unetu u password
  11. //Uraditi validaciju za sign in formu koji hoces nacin ili na klik dugmenta da proverava polja ili na kucanje u poljima
- 12. Password polje treba da ima najmanje 6 karaktera
- 13. Name polje treba da ima najmanje 1 karakter
- 14. Na sbumit sacuvatio u 'users' key u local storage
- 15. Polja ne smeju biti prazna (mozes sam da odredis koliko najmanje ili najsvise karaktera)
+ 12. //Password polje treba da ima najmanje 6 karaktera
+ 13. //Name polje treba da ima najmanje 1 karakter
+ 14. //Na sbumit sacuvatio u 'users' key u local storage
+ 15. //Polja ne smeju biti prazna (mozes sam da odredis koliko najmanje ili najsvise karaktera)
  16. U polja ne sme da se unese samo space (hint: pogledati o trim metodi koja brise prazna mesta tj space)
  17. Prikazati poruku bg-success kad se uspesno sacuvaju podaci o registrovanom korisniku u local storage
  18. Nakon uspesne registracije kosrisnika uraditi redirekciju korisnika na todo-list stranu (pogledati kako se radi redirektcija na vue-roter dokumentaciju)
