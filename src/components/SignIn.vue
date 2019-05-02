@@ -19,7 +19,7 @@
                   v-if="submitted && !$v.user.firstName.required"
                   class="invalid-feedback"
                 >First Name is required</div>
-                <span v-if="!$v.user.firstName.minLength">Name must be at least 4 characters</span>
+                <span v-if="!$v.user.firstName.minLength" class="invalid-feedback">Name must be at least 4 characters</span>
               </div>
               <div class="form-group">
                 <label for="lastName">Last Name</label>
@@ -34,7 +34,7 @@
                 <div
                   v-if="submitted && !$v.user.lastName.required"
                   class="invalid-feedback"
-                >Last Name is required</div>
+                ></div>
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
@@ -141,6 +141,8 @@ export default {
       }
 
       alert("SUCCESS!! :-");
+      this.$router.push('/todo-list');
+       
     },
      setUserToLocalStorage(user) {
       window.localStorage.setItem("user", JSON.stringify(user));
