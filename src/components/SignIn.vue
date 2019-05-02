@@ -9,38 +9,39 @@
                 <label for="firstName">First Name</label>
                 <input
                   type="text"
-                  v-model="user.firstName"
+                  v-model.trim="user.firstName"
                   id="firstName"
                   name="firstName"
                   class="form-control"
                   :class="{ 'is-invalid': submitted && $v.user.firstName.$error }"
+                 
                 >
                 <div
                   v-if="submitted && !$v.user.firstName.required"
                   class="invalid-feedback"
                 >First Name is required</div>
-                <span v-if="!$v.user.firstName.minLength" class="invalid-feedback">Name must be at least 4 characters</span>
+                <span
+                  v-if="!$v.user.firstName.minLength"
+                  class="invalid-feedback"
+                >Name must be at least 4 characters</span>
               </div>
               <div class="form-group">
                 <label for="lastName">Last Name</label>
                 <input
                   type="text"
-                  v-model="user.lastName"
+                  v-model.trim="user.lastName"
                   id="lastName"
                   name="lastName"
                   class="form-control"
                   :class="{ 'is-invalid': submitted && $v.user.lastName.$error }"
                 >
-                <div
-                  v-if="submitted && !$v.user.lastName.required"
-                  class="invalid-feedback"
-                ></div>
+                <div v-if="submitted && !$v.user.lastName.required" class="invalid-feedback"></div>
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
                 <input
                   type="email"
-                  v-model="user.email"
+                  v-model.trim="user.email"
                   id="email"
                   name="email"
                   class="form-control"
@@ -55,7 +56,7 @@
                 <label for="password">Password</label>
                 <input
                   type="password"
-                  v-model="user.password"
+                  v-model.trim="user.password"
                   id="password"
                   name="password"
                   class="form-control"
@@ -70,7 +71,7 @@
                 <label for="confirmPassword">Confirm Password</label>
                 <input
                   type="password"
-                  v-model="user.confirmPassword"
+                  v-model.trim="user.confirmPassword"
                   id="confirmPassword"
                   name="confirmPassword"
                   class="form-control"
@@ -97,7 +98,6 @@ import { required, email, minLength, sameAs } from "vuelidate/lib/validators";
 import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
 
-
 export default {
   name: "SignIn",
   data() {
@@ -109,44 +109,56 @@ export default {
         password: "",
         confirmPassword: ""
       },
+       /*filters: {
+  
+  	trim() {
+    	return user.trim()
+        }
+  
+  },*/
       submitted: false
     };
   },
   validations: {
     user: {
       firstName: { required, minLength: minLength(4) },
-      lastName: { },
+      lastName: {},
       email: { required, email },
       password: { required, minLength: minLength(6) },
       confirmPassword: { required, sameAsPassword: sameAs("password") }
     }
   },
   methods: {
-
+     /*supertrim(user) {
+            this.$el.user = user.replace(/\s/g, '');
+    },*/
     handleSubmit(event) {
       event.preventDefault();
-       this.setUserToLocalStorage(this.user);
+      this.setUserToLocalStorage(this.user);
 
       this.firstName = "";
       this.lastName = "";
       this.email = "";
       this.password = "";
       this.confirmPassword = "";
+      
 
       this.submitted = true;
 
       this.$v.$touch();
       if (this.$v.$invalid) {
         return;
+        
       }
 
       alert("SUCCESS!! :-");
-      this.$router.push('/todo-list');
-       
+      this.$router.push("/todo-list");
     },
-     setUserToLocalStorage(user) {
+    setUserToLocalStorage(user) {
       window.localStorage.setItem("user", JSON.stringify(user));
     },
+       
+   
   }
 };
 </script>
