@@ -30,3 +30,6 @@ Mozes i na primer da ostavis dugme ADD TODO da uvek bude dostupno ali da prikaze
  16. //U polja ne sme da se unese samo space (hint: pogledati o trim metodi koja brise prazna mesta tj space)
  17. //Prikazati poruku bg-success kad se uspesno sacuvaju podaci o registrovanom korisniku u local storage
  18. //Nakon uspesne registracije kosrisnika uraditi redirekciju korisnika na todo-list stranu (pogledati kako se radi redirektcija na vue-roter dokumentaciju)
+
+ ABCD-1
+ // sacuvaj registrovanog korisnika u local storage kao users array
