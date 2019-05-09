@@ -28,7 +28,7 @@
               placeholder="Todo Description"
             >
           </div>
-          <!--<button v-on:click="createTodo1" type="submit" class="btn btn-primary">Add Todo</button>-->
+          <button v-on:click="createTodo1" type="submit" class="btn btn-primary">Add Todo</button>
           <button v-bind:disabled="isButtonDisabled()" v-show="!editTodoForm" v-on:click="createTodo" type="submit" class="btn btn-primary">Add Todo</button>
           <button v-bind:disabled="isButtonDisabled()" v-show="editTodoForm" v-on:click="saveTodo" type="submit" class="btn btn-success">Save Todo</button>
           <input type="button" class="button is-warning" @click="resetForm()" value="Reset Form">
@@ -160,7 +160,7 @@ export default {
 
       this.idCounter += 1;
     },
-     /*createTodo1(event) {
+     createTodo1(event) {
       event.preventDefault();
       
 
@@ -174,7 +174,7 @@ export default {
         done: this.done
       });
       }
-    },*/
+    },
     clearTodos() {
       this.todos = [];
       this.setTodosToLocalStorage(this.todos);
